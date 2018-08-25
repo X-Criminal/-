@@ -1,0 +1,140 @@
+header{
+    background-color: #2ecede;
+    height: 70px;
+    float: left;
+    width: 100%;
+}
+header >span{
+    font-size: 23px;
+    color: white;
+    line-height: 70px;
+    float: left;
+    margin-left: 10px;
+}
+header .user{
+    float: right;
+    height: 100%;
+    margin-right: 10px;
+    position: relative;
+    cursor:pointer;
+}
+
+header .user i{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background: url(../img/administrators_face_2.png);
+    background-size: cover;
+    vertical-align:middle;
+    margin-top: -5px;
+}
+header .user span{
+    line-height: 70px;
+    color:white;
+    margin: 0 5px;
+}
+header .user .modify{
+    position: absolute;
+    width: 250px;
+    top: 70px;
+    border: 1px solid #edebe9;
+    right: 0;
+    display: none;
+}
+header .user .modify .modify_img{
+    background: url(../img/administrators_face_2.png);
+    background-size: cover;
+    width: 65px;
+    height: 65px;
+    margin: 10px auto;
+}
+.modify >p{
+    line-height: 24px;
+    margin: 0;
+    text-align:center;
+    color: #7a8484;
+}
+.modify .modify_btn{
+    text-align: center;
+    margin-bottom: 15px;
+} 
+.modify .modify_btn button{
+    width: 90px;
+    height: 40px;
+    display: inline-block;
+    margin: 10px;
+}
+.modify .modify_btn button:nth-child(1){
+    background-color: #2ecede;
+    border-color:#2ecede; 
+}
+.modify .modify_btn button:nth-child(2){
+    background-color: #ff6464;
+    border-color: #ff6464;
+}
+.modify .modify_btn button span{
+    line-height: 40px;
+    margin: 0;
+}
+header .user:hover .modify{
+    display: block;
+}
+#components-layout-demo-side .logo {
+    height: 32px;
+    background: rgba(255,255,255,.2);
+    margin: 16px;
+  }
+  .body nav{
+      float: left;
+      box-shadow: 0 2px 8px rgb(139, 129, 129) ;
+      height: calc(100vh - 70px)
+  }
+  .body nav .iconfont{
+      margin-right: 8px;
+  }
+  .ant-layout-sider{
+      background-color: #fff;
+  }
+ .ant-menu-dark .ant-menu-sub{
+      background-color: #fff;
+  }
+  
+  .ant-menu-dark .ant-menu-inline.ant-menu-sub{
+      background: #fff;
+      box-shadow: none;
+  }
+  .ant-menu-dark.ant-menu-inline .ant-menu-item{
+      color: #adb7b7;
+  }
+  .ant-menu.ant-menu-dark .ant-menu-item-selected{
+      background-color:#f2f8f8;
+      color: #39d2d0;
+  }
+  .ant-menu .ant-menu-dark .ant-menu-item-active{
+    background-color:#f2f8f8;
+    color: #39d2d0;
+  }
+  .ant-menu-dark{
+      color: #adb7b7;
+      background: white;
+  }
+  .ant-menu-dark .ant-menu-submenu-open{
+      color: #adb7b7;
+  }
+  .ant-menu-dark .ant-menu-submenu-active{
+      color:  #adb7b7
+  }
+  .ant-menu-dark  .ant-menu-submenu-title:hover{
+      color:  #39d2d0;
+      background-color:#f2f8f8;
+  }
+  .ant-menu-dark .ant-menu-submenu-selected{
+    color:  #39d2d0;
+  }
+
+.ant-menu-dark .ant-menu-item:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-item-active > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-active > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-open > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-title:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-item:hover > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-item-active > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-active > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-open > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-title:hover > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-item:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-item-active > .ant-menu-submenu-title > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-active > .ant-menu-submenu-title > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-open > .ant-menu-submenu-title > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-title:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-item:hover > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-item-active > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-active > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-open > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-selected > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-submenu-title:hover > .ant-menu-submenu-title:hover > .ant-menu-submenu-arrow:before {
+    background: #cfd9d8;
+}
+.ant-menu-dark .ant-menu-submenu-title .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-sub .ant-menu-submenu-title .ant-menu-submenu-arrow:after, .ant-menu-dark .ant-menu-submenu-title .ant-menu-submenu-arrow:before, .ant-menu-dark .ant-menu-sub .ant-menu-submenu-title .ant-menu-submenu-arrow:before {
+    background: #cfd9d8;
+}
