@@ -38,9 +38,9 @@ export default class body extends React.Component{
         super(props);
         this.state={
             bodyTmp:rou,
+            key:0,
         }
-    }
-    key=0
+    }a
     //组件加载前生命周期
     componentWillMount (){
         let adminInfo = cookie.load("adminInfo");
@@ -53,7 +53,8 @@ export default class body extends React.Component{
         }else if((+type)===2){
             this.setState({
                 bodyTmp:this.classification(rou,["普通管理员"]),
-           })
+                key:1
+           });
            this.key=1;
         }else if((+type)===3){
             this.setState({
@@ -119,7 +120,7 @@ export default class body extends React.Component{
                     }
                 </nav>
                 <div className={"router"}>
-                    <Router _key={this.key} />
+                    <Router _key={this.state.key} />
                 </div>
             </div>
         )
