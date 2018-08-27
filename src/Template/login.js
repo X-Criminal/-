@@ -52,6 +52,7 @@ export default class login extends React.Component{
         axios.post(this.props.http+"/securitylock/web/admin/Login",data)
         .then((res)=>{
             if(res.data.code===1000){
+                res.data.data.password=this.state.password;
                 _this.props._onclick(res.data)
             }else{
                 this.setState({
@@ -59,6 +60,11 @@ export default class login extends React.Component{
                     loading:false,
                 })
             }
+        }).catch((res)=>{
+            this.setState({
+                loading:false
+            })
+            alert("网络错误，请稍后再试！")
         })
     }
 

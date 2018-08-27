@@ -1,8 +1,10 @@
 import React from "react";
 import cookie from "react-cookies";
-import {Button,Layout, Menu, Icon} from "antd";
+import {Button,Layout, Menu} from "antd";
 import "./css/body.css"
 
+//修改密码
+import Uppassword from "./jsx/BodySubassembly/upDataAdminpassword.js";
 /***
  * 引入需要组件
  */
@@ -38,9 +40,10 @@ export default class body extends React.Component{
         super(props);
         this.state={
             bodyTmp:rou,
-            key:0,
+            key:"0",
+            isuppassword:false,
         }
-    }a
+    }
     //组件加载前生命周期
     componentWillMount (){
         let adminInfo = cookie.load("adminInfo");
@@ -49,20 +52,23 @@ export default class body extends React.Component{
         if((+type)===1){
             this.setState({
                 bodyTmp:rou,
+                key:"0"
             })
         }else if((+type)===2){
             this.setState({
                 bodyTmp:this.classification(rou,["普通管理员"]),
-                key:1
-           });
+                key:"1"
+           })
            this.key=1;
         }else if((+type)===3){
             this.setState({
-                bodyTmp:this.classification(rou,["普通管理员","区域管理员","店面管理","商品发布"])
+                bodyTmp:this.classification(rou,["普通管理员","区域管理员","店面管理","商品发布"]),
+                key:"3"
            })
         }else if((+type)===4){
             this.setState({
-                bodyTmp:this.classification(rou,["普通管理员","区域管理员","店面管理","商品发布","APP用户","设备管理","返利","售后维修"])
+                bodyTmp:this.classification(rou,["普通管理员","区域管理员","店面管理","商品发布","APP用户","设备管理","返利","售后维修"]),
+                key:"6"
            })
         }
     }
@@ -91,7 +97,15 @@ export default class body extends React.Component{
 
     componentDidMount (){
     
-
+    }
+    SignOut=()=>{
+        cookie.remove("adminInfo");
+        window.location.reload();
+    }
+    upPassword=( )=>{
+        this.setState({
+            isuppassword:!this.state.isuppassword
+        })
     }
     render(){
         return(
@@ -105,8 +119,8 @@ export default class body extends React.Component{
                              <div className={"modify_img"}> </div>
                              <p>13888888</p>
                              <div className={"modify_btn"} >
-                                <Button type="primary">修改密码</Button>
-                                <Button type="primary">退出登陆</Button>
+                                <Button type="primary" onClick={this.upPassword}>修改密码</Button>
+                                <Button type="primary" onClick={this.SignOut}>退出登陆</Button>
                              </div>
                         </div>
                     </div>
@@ -115,13 +129,13 @@ export default class body extends React.Component{
                     {
                         (+cookie.load("adminInfo").data.type)===1?<Tem rou_state={this.rou_state} />
                     :    
-                       // <Layout style={{ height: '100%' }}><Sider><Menu onClick={this.rou_state} theme="dark" defaultSelectedKeys={['0']} mode="inline">{this.state.bodyTmp((res,idx)=> <Menu.Item key={res.key}><Icon type="desktop" /><span>{res.name}</span></Menu.Item>)}</Menu></Sider></Layout>
-                       <_Tem rou_state={this.rou_state} Temp={this.state.bodyTmp}/>
+                       <TemTwo rou_state={this.rou_state} _key={this.state.key} Temp={this.state.bodyTmp}/>
                     }
                 </nav>
                 <div className={"router"}>
                     <Router _key={this.state.key} />
                 </div>
+                <Uppassword key={"修改密码"} http={this.props.http} isup={this.state.isuppassword} _updata={this.upPassword}/>
             </div>
         )
     }
@@ -176,17 +190,11 @@ function Tem (props){
       </Layout>
     )
 }
-function _Tem(props){
-   
-    console.log( props.Temp)
+function TemTwo(props){
     return (
         <Layout style={{ height: '100' }}>
         <Sider>
-          <Menu onClick={props.rou_state} theme="dark" defaultSelectedKeys={['0']} mode="inline">
-            {/* <Menu.Item key="2">
-              <span><i className="iconfont icon-dianpu"></i></span>
-              <span>店面管理</span>
-            </Menu.Item> */}
+          <Menu onClick={props.rou_state} theme="dark" defaultSelectedKeys={[props._key]} mode="inline">
               {props.Temp.map((res)=> <Menu.Item key={res.key}> <span><i className={"iconfont "+res.icon}></i></span> <span>{res.name}</span></Menu.Item> )}
           </Menu>
         </Sider>
@@ -194,13 +202,6 @@ function _Tem(props){
     )
 }
 
-
 function Router(props){
-    // console.log(props._key)
-    // for(let i = 0,idx=rou.length;i<idx;i++){
-    //     if((+props._key)===rou[i].key){
-    //         return rou[i].jsx
-    //     }
-    // }
     return rou[(+props._key)].jsx
 }

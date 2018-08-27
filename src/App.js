@@ -35,6 +35,25 @@ class App extends Component {
         adminInfo:true
     })
   }
+
+  /**登陆.png */
+  inlogin( ){
+    let data = {
+      data:{
+        code:1000,
+        data:{
+          accounts:"admin",
+          type:"1"
+        },
+        message:"登陆成功",
+        success:200
+      }
+    }
+    cookie.save("adminInfo",data);
+    this.setState({
+      adminInfo:true,
+    })
+  }
     render() {
         if(this.state.adminInfo){
             return <Body  http={this.state.url}/>
