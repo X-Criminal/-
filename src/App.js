@@ -54,6 +54,7 @@ class App extends Component {
       adminInfo:true,
     })
   }
+  
     render() {
         if(this.state.adminInfo){
             return <Body  http={this.state.url}/>

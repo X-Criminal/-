@@ -9,8 +9,8 @@ export default class app extends Component{
     }
 
     render(){
-        retrun(
-            <div className={"a_box"}>
+        return(
+            <div className={"search"}>
                 
             </div>
         )
