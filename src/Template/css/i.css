@@ -1,0 +1,13 @@
+.i .ant-cascader-picker{
+    width: 300px;
+}
+.i .AddinfoBox{
+    color: black;
+}
+.i .type3 button{
+    width: 80px;
+    height: 40px;
+    background-color: rgb(46,206,222);
+    color: white;
+    border-color: rgb(46,206,222);
+}

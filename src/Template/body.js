@@ -21,18 +21,19 @@ import J from "./jsx/j.js";
 
 const {Sider } = Layout;
 const SubMenu = Menu.SubMenu;
+const url = "http://172.16.10.68:8086";
 
 const rou =  [
-    {name:"普通管理员" ,jsx:<A    />,key:"0"},
-    {name:"区域管理员" ,jsx:<B   />,key:"1",icon:"icon-yonghu"},
-    {name:"店面管理"   ,jsx:<C   />,key:"2",icon:"icon-dianpu"},
-    {name:"APP用户"    ,jsx:<D   />,key:"3",icon:"icon-usergroup"},
-    {name:"商品发布"   ,jsx:<E   />,key:"4",icon:"icon-gouwuche"},
-    {name:"设备管理"   ,jsx:<F   />,key:"5",icon:"icon-shezhi"},
-    {name:"销售统计"   ,jsx:<G   />,key:"6",icon:"icon-shuju"},
-    {name:"订单"       ,jsx:<H   />,key:"7",icon:"icon-dingdan"},
-    {name:"返利"       ,jsx:<I   />,key:"8",icon:"icon-huobiqiandaizijin"},
-    {name:"售后维修"   ,jsx:<J   />,key:"9",icon:"icon-xiugai"},
+    {name:"普通管理员" ,jsx:<A   http={url}  />,key:"0"},
+    {name:"区域管理员" ,jsx:<B   http={url} />,key:"1",icon:"icon-yonghu"},
+    {name:"店面管理"   ,jsx:<C   http={url} />,key:"2",icon:"icon-dianpu"},
+    {name:"APP用户"    ,jsx:<D   http={url} />,key:"3",icon:"icon-usergroup"},
+    {name:"商品发布"   ,jsx:<E   http={url} />,key:"4",icon:"icon-gouwuche"},
+    {name:"设备管理"   ,jsx:<F   http={url} />,key:"5",icon:"icon-shezhi"},
+    {name:"销售统计"   ,jsx:<G   http={url} />,key:"6",icon:"icon-shuju"},
+    {name:"订单"       ,jsx:<H   http={url} />,key:"7",icon:"icon-dingdan"},
+    {name:"返利"       ,jsx:<I   http={url} />,key:"8",icon:"icon-huobiqiandaizijin"},
+    {name:"售后维修"   ,jsx:<J   http={url} />,key:"9",icon:"icon-xiugai"},
 ]
 
 export default class body extends React.Component{
@@ -114,10 +115,10 @@ export default class body extends React.Component{
                     <span>安防门锁</span>
                     <div className={"user"}>
                         <i></i>
-                        <span>13888888</span>
+                        <span>{cookie.load("adminInfo").data.accounts}</span>
                         <div className={"modify"}>
                              <div className={"modify_img"}> </div>
-                             <p>13888888</p>
+                             <p>{cookie.load("adminInfo").data.accounts}</p>
                              <div className={"modify_btn"} >
                                 <Button type="primary" onClick={this.upPassword}>修改密码</Button>
                                 <Button type="primary" onClick={this.SignOut}>退出登陆</Button>
@@ -133,7 +134,7 @@ export default class body extends React.Component{
                     }
                 </nav>
                 <div className={"router"}>
-                    <Router _key={this.state.key} />
+                    <Router  _key={this.state.key} />
                 </div>
                 <Uppassword key={"修改密码"} http={this.props.http} isup={this.state.isuppassword} _updata={this.upPassword}/>
             </div>

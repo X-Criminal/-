@@ -12,3 +12,29 @@
     visibility: hidden;
     clear: both;
 }
+.deladmin {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    cursor:pointer;
+}
+.deladmin::before{
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    top: 50%;
+    right: 0;
+    transform: rotate(45deg);
+    background-color: #ccc;
+}
+.deladmin::after{
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 2px;
+    top:50%;
+    right: 0;
+    transform: rotate(-45deg);
+    background-color: #ccc;
+}

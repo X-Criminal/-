@@ -68,18 +68,17 @@ export default class login extends React.Component{
         })
     }
 
-
     render(){
         return(
             <div className={"login"}>
-					<div className={"login_box"}>
+					<div className={"login_box"} >
 						<h4>用户登陆</h4>
-                        <Input type="text" placeholder="账号"     name={"accounts"} onChange={this._onChange} onFocus={this._focus}/>
-                        <Input type="password" placeholder="密码" name={"password"} onChange={this._onChange} onFocus={this._focus}/>
-                        <p className={"err"}>{this.state.err}</p>
-                        <Button className={"btn_login"} type="primary" loading={this.state.loading} onClick={this.enterLoading}>
-                            登陆
-                        </Button>
+                                <Input type="text" placeholder="账号"     name={"accounts"} onChange={this._onChange} onFocus={this._focus}/>
+                                <Input type="password" placeholder="密码" name={"password"} onChange={this._onChange} onFocus={this._focus}/>
+                                <p className={"err"}>{this.state.err}</p>
+                                <Button name={"btn"} className={"btn_login"} type="primary" loading={this.state.loading} onClick={this.enterLoading} >
+                                    登陆
+                                </Button>
 					</div>
             </div>
         )

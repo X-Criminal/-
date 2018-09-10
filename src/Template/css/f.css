@@ -1,0 +1,58 @@
+.f .Pagination{
+    float: right;
+    width: auto;
+}
+.Identification{
+    width: auto;
+    float: left;
+    font-size: 12px;
+    line-height: 32px;
+}
+.Identification span{
+    position: relative;
+    padding-left: 18px;
+    margin-left: 3px;
+}
+.ico::before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 7px);
+    border-radius: 100%;
+    text-align: center;
+}
+.f td{
+    position: relative;
+}
+._z::before{
+    background-color:rgba(119,208,82);
+}
+._y::before{
+    background-color:rgba(253,163,9);
+}
+._q::before{
+    content: "欠";
+    background-color:rgba(255,158,19);
+    line-height: 12px;
+    color: white;
+}
+.__b::before{
+    content: "!";
+    line-height: 12px;
+    color: white;
+    background-color:rgba(255,78,75);
+}
+.f .datalis table td:last-child button {
+    margin-left: 0;
+}
+.f td .ico::before{
+    left: 8px;
+}
+.derviceName{
+    font-size: 12px;
+}
+.f .datalis table td:last-child{
+    width: auto;
+}

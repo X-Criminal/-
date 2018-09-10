@@ -1,0 +1,14 @@
+.h .AddinfoBox{
+    width: 900px;
+    left: calc(50% - 450px);
+    padding: 15px;
+}
+.h .logisticsState{
+    color: black;
+}
+.h .AddinfoBox >h3{
+    color: black;
+}
+.h .logisticsState{
+    margin: 10px 0;
+}

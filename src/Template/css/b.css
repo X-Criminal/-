@@ -1,0 +1,22 @@
+.b .AddinfoBox,.c .AddinfoBox{
+    width: 800px;
+    left: calc(50% - 400px);
+}
+.b .AddinfoBox >div, .c .AddinfoBox >div{
+    width: 49%;
+    float: left;
+}
+.c .AddinfoBox >div >span{
+    margin-top: 0;
+}
+.c .AddinfoBox >div{
+    margin-top: 15px;
+}
+.b .AddinfoEnd, .c .AddinfoEnd{
+    width: 100% !important;
+}
+.b .ant-cascader-picker, .c .ant-cascader-picker{
+    width: 70%;
+    padding: 0;
+    text-align: left;
+}

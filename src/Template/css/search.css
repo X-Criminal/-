@@ -1,0 +1,14 @@
+.search{
+    float: left;
+}
+.search input{
+    width: 200px;
+    height: 40px;
+}
+.search button{
+    width: 80px;
+    height: 40px;
+    margin-left: 20px;
+    background-color: #3cb5f4;
+    border-color: #3cb5f4;
+}

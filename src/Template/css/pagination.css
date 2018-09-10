@@ -1,0 +1,43 @@
+.Pagination{
+    margin-top: 20px;
+    text-align: right;
+}
+.Pagination >span{
+    line-height: 32px;
+    font-size: 13px;
+    margin-right: 15px;
+}
+.Pagination >.ant-pagination{
+    float: right;
+}
+.Pagination .ant-pagination-prev, .ant-pagination-next{
+    min-width: 25px;
+    height: 25px;
+    line-height: 25px;
+}
+.Pagination .ant-pagination-prev .ant-pagination-item-link:after, .ant-pagination-next .ant-pagination-item-link:after{
+    height: 25px;
+}
+.Pagination .ant-pagination-prev .ant-pagination-item-link,.ant-pagination-next .ant-pagination-item-link{
+    border-radius: 100%;
+    background-color: #ebeded;
+    border-color: #ebeded;
+}
+.Pagination .ant-pagination-next:hover .ant-pagination-item-link{
+    border-color:#ebeded;
+}
+.Pagination .ant-pagination-next:focus .ant-pagination-item-link{
+    border-color:#ebeded;
+    color: black;
+}
+.Pagination .ant-pagination-prev:focus .ant-pagination-item-link{
+    border-color:#ebeded;
+    color: black;
+} 
+.Pagination .ant-pagination-item{
+    border: none;
+    background-color: rgba(0, 0, 0, 0)
+}
+.Pagination .ant-pagination-item-active a{
+    color: black;
+}

@@ -1,0 +1,120 @@
+.details{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.8);
+    z-index: 997;
+}
+.details_box{
+    position: absolute;
+    width: 960px;
+    height: 462px;
+    left: calc(50% - 480px);
+    top:20%;
+    background-color: white;
+    border-radius: 8px;
+    box-sizing: border-box;
+    padding: 15px;
+}
+.details_box .title span{
+    font-size: 18px;
+    font-weight: 600;
+}
+.details_box .deladmin{
+    top: 20px;
+    right: 15px;
+}
+.details .Nav{
+    width: 294px;
+    height: 40px;
+}
+.details .Nav span{
+    float: left;
+    height: 100%;
+    width: 33.333%;
+    line-height: 40px;
+    text-align: center;
+    border-top: 1px solid #dde7e7;
+    border-bottom: 1px solid #dde7e7;
+    border-left: 1px solid #dde7e7;
+    cursor:pointer;
+}
+.details .Nav span:last-child{
+    border-right: 1px solid #dde7e7;
+    border-radius: 0 5px 5px 0;
+}
+.details .Nav span:nth-child(1){
+    border-radius: 5px 0 0 5px;
+}
+.details .Nav .s{
+    background-color: #2ecede;
+    border-color: #2ecede;
+    color:white;
+}
+.datalis .inLis tbody tr td{
+    position: relative;
+}
+.datalis .inLis tbody tr td:nth-child(2)::before{
+    content: "";
+    position:absolute;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    top: calc(50% - 10px);
+    border-radius: 100%;
+}
+.datalis .inLis tbody tr .y::before{
+    background-color: #77cd52;
+}
+.datalis .inLis tbody tr .n::before{
+    background-color: #dde7e7;
+}
+.inTitle >div:nth-child(1){
+    float: left;
+}
+.inTitle >div:nth-child(1)>span{
+    display: inline-block;
+    position: relative;
+}
+.inTitle >div:nth-child(1)>span:nth-child(1):after{
+    content:"";
+    float: left;
+    width: 20px;
+    margin-left: 10px;
+    height: 20px;
+    background-color:  #77cd52;
+    border-radius: 100%;
+    margin-right: 5px;
+}
+.inTitle >div:nth-child(1)>span:nth-child(2):after{
+    content:"";
+    float: left;
+    width: 20px;
+    height: 20px;
+    background-color: #dde7e7;
+    border-radius: 100%;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+.Nav{
+    margin-top: 32px;
+}
+.inLis .number{
+    position: absolute;
+    top: 45px;
+    color: black;
+}
+.inTitle .Pagination >div:nth-child(1)>span:nth-child(1):after{
+    display: none;
+}
+._a ,._b,._c{
+    margin-top: 15px;
+}
+.d ._b  table td:last-child{
+    width: auto;
+}
+.d ._c  table td:last-child{
+    width: auto;
+}
