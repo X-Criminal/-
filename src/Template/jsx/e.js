@@ -93,7 +93,7 @@ export default class app extends Component{
     render(){
         return(
             <div className={"a e"}>
-                <h3><span><i className={"iconfont icon-yonghu"}></i>管理员设置 </span><span>/ 普通管理员</span></h3>
+                <h3><span><i className={"iconfont icon-yonghu"}></i>商品发布</span></h3>
                 <div><Search getSearchData={this.SearchAdmin}/><AddAdmin upAdmin={this.upAdmin}/></div>
                 <Alis Lis={this.state.Lis} _diff={this._diff} deleAdmin={this.deleAdmin}/>
                 <Page strip={this.state.strip} pageTo={this.pagingAdmin}/>

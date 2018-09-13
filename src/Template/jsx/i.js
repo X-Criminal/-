@@ -40,12 +40,16 @@ export default class app extends Component{
                         strip:res.data.data.strip,
                         Lis:res.data.data.rebate
                      })
+                 }else{
+                    alert(res.data.message)
                  }
+                 
                  cb&&cb()
              })
     }
 
     SalesStatistics=(obj,cb)=>{
+        console.log(obj)
         this.init(obj,()=>{
             cb&&cb()
         })
@@ -53,6 +57,14 @@ export default class app extends Component{
     //-----翻页数据------\\
     pageTo=(data)=>{
         this.init({page:data})
+    }
+    //-------审核返利--------\\
+    _diff=(data,cb)=>{
+        axios.post(this.props.http+"/securitylock/web/admin/updateRebate",data)
+             .then((res)=>{
+                    alert(res.data.message)
+                    cb&&cb()
+            })
     }
 
     render(){
@@ -65,7 +77,7 @@ export default class app extends Component{
                     :
                     <Type3 http={this.props.http}/>
                 }
-                <Ilis  Lis={this.state.Lis} http={this.props.http}/>
+                <Ilis  Lis={this.state.Lis} http={this.props.http} _diff={this._diff}/>
                 <Page strip={this.state.strip} pageTo={this.pagingAdmin}/>
             </div>
         )

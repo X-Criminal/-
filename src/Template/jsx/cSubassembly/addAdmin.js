@@ -79,7 +79,7 @@ function Addadmin(props){
                     <div><span>省市区</span> <Transition name={"provinces"} xz={true} xzInfo={props._onchange}/></div>
                     <div><span>街道</span> <Input name={"street"} onChange={props._onchange}/></div>
                     <div><span>详细地址</span> <Input name={"detailsAddress"} onChange={props._onchange}/></div>
-                    <div><span>区域管理员(管理员ID)</span> <Input name={"aid"} onChange={props._onchange}/></div>
+                    <div><span>区域管理员id</span> <Input name={"aid"} onChange={props._onchange}/></div>
                     <div className={"AddinfoEnd"}><Button onClick={props._onclick}>取消</Button><Button onClick={props.updata}>确定</Button></div>
                 </div>
             </div>

@@ -46,18 +46,17 @@ export default class app extends Component{
     }
     addData=(data,cb)=>{
         let _this = this;
-        data.aid = (+data.aid)
-        axios.post(this.props.http+"/securitylock/web/admin/insertTypeAdmin",data)
-        .then((res)=>{
-            if(res.data.code===1000){
-                _this.init( )
-            }
-            alert(res.data.message)
-            cb&&cb()
-        }).catch((res)=>{
-            cb&&cb()
-            console.log(res)
-        })
+        axios.post(this.props.http+"/securitylock/web/admin/insertStore",data)
+             .then((res)=>{
+                    if(res.data.code===1000){
+                        _this.init( )
+                    }
+                    alert(res.data.message)
+                    cb&&cb()
+                }).catch((res)=>{
+                    cb&&cb()
+                    console.log(res)
+                })
     }
     /***
      * 翻页数据
@@ -94,6 +93,7 @@ export default class app extends Component{
      * 点击添加
      */
     updata=(data,cb)=>{
+            console.log(data)
             this.addData(data,()=>{
                 cb&&cb()
             })   
@@ -122,7 +122,7 @@ export default class app extends Component{
     dele=(data,cb)=>{
     let _this = this;
         cb&&cb()
-        axios(this.props.http+"/securitylock/web/admin/deleteStoreById?id="+data)
+        axios(this.props.http+"/securitylock/web/admin/deleteStoreById?sid="+data)
             .then((res)=>{
                     alert(res.data.message)
                     _this.init()
@@ -136,7 +136,7 @@ export default class app extends Component{
                     <Transition ontranstion={this.ontranstion}/>
                     <Cadd updata={this.updata}/>
                 </div>
-                <Clis lisData={this.state.lisData} diff={this.diff} dele={this.dele}/>
+                <Clis http={this.props.http} lisData={this.state.lisData} diff={this.diff} dele={this.dele}/>
                 <Page strip={this.state.strip} pageTo={this.pagingAdmin}/>
             </div>
         )

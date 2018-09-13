@@ -48,8 +48,8 @@ export default class App extends Component {
                         <div><span>尺寸</span> <Input /></div>
                         <div><span>描述</span> <Input.TextArea  /></div>
                         <div className={"AddinfoEnd"}><Button onClick={this.props._onclick}>取消</Button><Button>确定</Button></div>
+                    </div>
                 </div>
-            </div>
             )
         }else{
             return null;

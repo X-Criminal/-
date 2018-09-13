@@ -29,7 +29,7 @@ export default class app extends Component{
     }
     render(){
         if(this.props.xz){
-                return<Cascader options={options} onChange={this.props.xzInfo} allowClear={true} placeholder={"省 、 市 、 区 、"}/>
+                return<Cascader options={options} onChange={this.props.xzInfo} allowClear={true} placeholder={this.props.placeholder||"省 、 市 、 区 、"}/>
         }else{
             return(
                 <div className={"search"}>
@@ -43,7 +43,8 @@ export default class app extends Component{
        
     }
 }
-  const options = [{
+const options = [
+{
     value: "北京市",
     label: "北京市",
     "children": [{
@@ -6778,12 +6779,6 @@ export default class app extends Component{
             value: "塘厦",
             label: "塘厦"
         }, {
-            value: "塘厦",
-            label: "塘厦"
-        }, {
-            value: "塘厦",
-            label: "塘厦"
-        }, {
             value: "其他",
             label: "其他"
         }]
@@ -11407,4 +11402,5 @@ export default class app extends Component{
             label: "其他",
         }]
     }]
-}];
+}
+];

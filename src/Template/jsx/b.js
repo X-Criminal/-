@@ -81,22 +81,23 @@ export default class app extends Component{
      * 点击搜索
      */
     ontranstion=(data,cb)=>{
+        this.setState({
+            condition:data.includes("undefined")?"":data,
+        })
         let _data={
             numberPage:5,
             page:1,
-            condition:data,
+            condition:data.includes("undefined")?"":data,
         }
         this.init(_data,()=>{
             cb&&cb()
         })
-        console.log(data)
     }
     /**
      * 
      * 点击添加
      */
     updata=(data,cb)=>{
-            console.log(data)
             this.addData(data,()=>{
                 cb&&cb()
             })
@@ -107,6 +108,7 @@ export default class app extends Component{
      * 点击修改
      */
     diff=(data,cb)=>{
+        console.log(data)
         axios.post(this.props.http+"/securitylock/web/admin/updateAdmin",data)
              .then((res)=>{
                 alert(res.data.message)
@@ -129,7 +131,12 @@ export default class app extends Component{
         axios(this.props.http+"/securitylock/web/admin/deleteTypeAdmin?aid="+data)
              .then((res)=>{
                      alert(res.data.message)
-                     _this.init()
+                     _this.init({
+                        numberPage:5,
+                        page:this.state.page,
+                        condition:this.state.condition,
+                        type:2
+                     })
              })
     }
     render(){
@@ -140,7 +147,7 @@ export default class app extends Component{
                     <Transition ontranstion={this.ontranstion}/>
                     <Badd updata={this.updata} />
                 </div>
-                <Blis lisData={this.state.lisData} diff={this.diff} dele={this.dele}/>
+                <Blis http={this.props.http} lisData={this.state.lisData} diff={this.diff} dele={this.dele}/>
                 <Page strip={this.state.strip} pageTo={this.pagingAdmin}/>
             </div>
         )

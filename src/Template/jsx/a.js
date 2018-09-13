@@ -13,8 +13,8 @@ export default class app extends Component{
         this.state={
             numPage:0,//总页数
             strip:0, //总条数
-            infodata:null,
             numberPage:5,
+            keywords:"",
             Lis:[],
         }
     }
@@ -59,7 +59,7 @@ export default class app extends Component{
             type:2,
         }
         this.setState({
-            infodata:_data
+            keywords:data
         })
         this.init(_data,()=>{
             cb&&cb();
@@ -113,15 +113,12 @@ export default class app extends Component{
 */
     pagingAdmin=(data)=>{
         let _data;
-        if(!this.state.infodata){
             _data = {
                 numberPage:this.state.numberPage,
                 page: data,
+                keywords:this.state.keywords,
                 type:2
             };
-        }else{
-            _data=data;
-        }
         this.init(_data);
     }
     render(){

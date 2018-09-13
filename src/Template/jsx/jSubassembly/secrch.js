@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import {Select  ,Button} from "antd";
 import Transition        from "../public/transition.js";
+import cookie            from "react-cookies"; 
 
 import "../../css/search.css"
 const Option = Select.Option;
@@ -37,6 +38,7 @@ export default class app extends Component{
             provinces:provinces
         })
     }
+
     handleChange=( e )=>{
         this.setState({
             rebateDateYear:e||""
@@ -51,7 +53,12 @@ export default class app extends Component{
     render(){
         return(
             <div className={"search"}>
+            {
+                cookie.load("adminInfo").data.type==="3"?
+                null
+                :
                 <Transition xz={true} xzInfo={this.xzInfo}/>
+            }
                 &nbsp;
                 &nbsp;
                 <Select

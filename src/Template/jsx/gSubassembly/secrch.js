@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import {Select  ,Button} from "antd";
 import axios             from "axios"
+import cookie            from "react-cookies";
 
 import "../../css/search.css"
 const Option = Select.Option;
@@ -45,8 +46,13 @@ export default class app extends Component{
     }
 
     componentDidMount(){
-        this.initData( )
+        if(cookie.load("adminInfo").data.type!=="3"){
+            this.initData( )
+        }else{
+            this.GetStoreList(cookie.load("adminInfo").data.aid)
+        }
     }
+
 
     initData=()=>{
         axios.get(this.props.http+"/securitylock/web/admin/getProvinces")
@@ -75,17 +81,22 @@ export default class app extends Component{
     render(){
         return(
             <div className={"search"}>
-               <Select
-                showSearch
-                style={{ width: 260 }}
-                placeholder="地区"
-                optionFilterProp="children"
-                onChange={this.handleChange1}
-                filterOption={true}
-                allowClear={true}
-               >
-                    {this.state.getProvinces.map((res,idx)=><Option key={idx} value={res.aid}>{res.provinces}</Option>)}
-                </Select>
+                {
+                    cookie.load("adminInfo").data.type!=="3"?
+                    <Select
+                        showSearch
+                        style={{ width: 260 }}
+                        placeholder="地区"
+                        optionFilterProp="children"
+                        onChange={this.handleChange1}
+                        filterOption={true}
+                        allowClear={true}
+                    >
+                            {this.state.getProvinces.map((res,idx)=><Option key={idx} value={res.aid}>{res.provinces}</Option>)}
+                    </Select>
+                    :
+                    null
+                }
                 <Select
                 showSearch
                 style={{ width: 200 }}

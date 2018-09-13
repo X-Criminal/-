@@ -53,10 +53,10 @@ export default class App extends Component {
                     </thead>
                     <tbody>
                         {this.props.Lis.map((res)=> <tr key={res.gid}><td>{res.gid}</td><td>{res.goodsName}</td><td>{res.price}</td><td>{res.specName}</td><td>{res.goodsSize}</td><td>{res.picture}</td><td>{res.describe}</td><td>{res.date}</td><td><Button onClick={this._onclick.bind(this.res)}>修改</Button><Button onClick={this.ondeleBox.bind(this,res.gid)}>删除</Button> </td></tr> )}
-                        <Diff _diffBox={this.state._diffBox} _diff={this.props._diff} _onclick={this._onclick.bind(this,null)} diff={this.state.diff}/>
-                        <Dele _deleBox={this.state._deleBox} ondeleBox={this.ondeleBox.bind(this,null)} deleAdmin={this.props.deleAdmin} dele={this.state.dele}/>
                     </tbody>
                 </table>
+                        <Diff _diffBox={this.state._diffBox} _diff={this.props._diff} _onclick={this._onclick.bind(this,null)} diff={this.state.diff}/>
+                        <Dele _deleBox={this.state._deleBox} ondeleBox={this.ondeleBox.bind(this,null)} deleAdmin={this.props.deleAdmin} dele={this.state.dele}/>
             </div>
         )
     }

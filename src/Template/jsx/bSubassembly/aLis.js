@@ -44,18 +44,8 @@ export default class App extends Component {
 
         }
     }
-    updata=(aid)=>{
-        let _data={
-            aid:aid,
-            accounts:this.state.accounts,
-            password:this.state.password,
-            name:this.state.name,
-            phone:this.state.phone,
-            provinces:this.state.provinces,
-            street:this.state.street,
-            detailsAddress:this.state.detailsAddress
-        }
-        this.props.diff(_data,()=>{
+    updata=(data)=>{
+        this.props.diff(data,()=>{
             this.setState({
                 _diffBox:!this.state._diffBox
             })
@@ -91,9 +81,17 @@ export default class App extends Component {
                         }
                     </tbody>
                 </table>
-                <Diff updata={this.updata} diffData={this.state.diffData} _onclick={this._onclick.bind(this,null)} _diffBox={this.state._diffBox} _onchange={this._onchange}/>
+                <DRouter http={this.props.http} updata={this.updata} diffData={this.state.diffData} _onclick={this._onclick.bind(this,null)} _diffBox={this.state._diffBox} _onchange={this._onchange}/>
                 <Dele dele={this.props.dele} _deleBox={this.state._deleBox} ondeleBox={this.ondeleBox.bind(this,null)} deleData={this.state.deleData}/>
             </div>
         )
     }
-} 
+}
+
+function DRouter( props ){
+    if(props._diffBox){
+        return <Diff  http={props.http} updata={props.updata} diffData={props.diffData} _onclick={props._onclick.bind(this,null)} _onchange={props._onchange}/>
+    }else{
+        return null;
+    }
+}

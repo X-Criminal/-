@@ -12,3 +12,6 @@
 .h .logisticsState{
     margin: 10px 0;
 }
+.h .datalis table td:nth-child(1){
+    width: auto;
+}

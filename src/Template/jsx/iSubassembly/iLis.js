@@ -41,11 +41,11 @@ export default class App extends Component {
                     </thead>
                     <tbody>
                         {
-                           this.props.Lis.map((res,idx)=><tr key={idx}><td>{res.rebateId}</td><td>{res.provinces}</td><td>{res.adminName}</td><td>{res.rebateDateYear}</td><td>{res.salesVolume}</td><td>{res.rebateMoney}</td><td>{res.state}</td><td>{res.applyDate}</td><td>{res.endDate}</td><td><Button onClick={this._onclick.bind(this,res.aid)}>审核</Button></td></tr>)
+                           this.props.Lis.map((res,idx)=><tr key={idx}><td>{res.rebateId}</td><td>{res.provinces}</td><td>{res.adminName}</td><td>{res.rebateDateYear}</td><td>{res.salesVolume}</td><td>{res.rebateMoney}</td><td>{res.state}</td><td>{res.applyDate}</td><td>{res.endDate}</td><td><Button onClick={this._onclick.bind(this,res)}>审核</Button></td></tr>)
                         }
                     </tbody>
                 </table>
-                <INFO _diffBox={this.state._diffBox} oid={this.state.oid} _onclick={this._onclick.bind(this,null)}/>
+                <INFO _diff={this.props._diff} _diffBox={this.state._diffBox} oid={this.state.oid} _onclick={this._onclick.bind(this,null)}/>
             </div>
         )
     }
@@ -53,7 +53,7 @@ export default class App extends Component {
 
 function INFO(props){
     if(props._diffBox){
-        return <Diff oid={props.oid} _onclick={props._onclick}/>
+        return <Diff _diff={props._diff} oid={props.oid} _onclick={props._onclick}/>
     }else{
         return null;
     }

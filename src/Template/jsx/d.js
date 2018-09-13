@@ -1,6 +1,8 @@
 import React,{Component} from "react";
-import axios from "axios";
+import axios             from "axios";
+import cookie            from "react-cookies";
 
+import Search     from "./public/search.js";
 import Transition from "./public/transition.js";
 import Page       from "./public/Pagination.js"
 import Dlis       from "./dSubassembly/aLis.js"
@@ -99,7 +101,12 @@ export default class app extends Component{
             <div className={"a d"}>
                 <h3><span><i className={"iconfont icon-usergroup"}> </i> App用户</span></h3>
                 <div className={"clear-fix"}>
-                <Transition ontranstion={this.ontranstion}/>
+                {
+                    cookie.load("adminInfo").data.type==="3"?
+                        <Search getSearchData={this.ontranstion}/>
+                        :
+                        <Transition ontranstion={this.ontranstion}/>
+                }
                 </div>
                 <Dlis lisData={this.state.lisData} dele={this.dele} http={this.props.http}/>
                 <Page strip={this.state.strip} pageTo={this.pagingAdmin}/>

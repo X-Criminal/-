@@ -11,3 +11,73 @@
     color: white;
     border-color: rgb(46,206,222);
 }
+.i .inInput{
+    box-sizing: border-box;
+    padding-left: 35px;
+    position: relative;
+    height: 40px;
+    margin-top: 15px;
+}
+.i .inInput >i{
+    position: absolute;
+    left: 8px;
+    width: 15px;
+    height: 15px;
+    top: calc(50% - 7px);
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    cursor: pointer;
+}
+.i .inInput:nth-child(1) input{
+    width: 100px;
+    color: #000;
+}
+.i .inInput >span{
+    float: left;
+    width: 80px;
+    line-height: 40px;
+}
+.i .inInput input{
+    float: left;
+    width: 80%;
+    height: 100%;
+}
+.i .AddinfoBox{
+    width: 600px;
+    left: calc(50% - 300px);
+}
+.i .inInput .iconfont{
+    font-size: 15px;
+    line-height: 14px;
+    box-sizing: border-box;
+    color: #2ecede;
+    border-color:#2ecede;
+}
+.icon-xuanzhongduigou:before{
+    margin-left: -1px;
+}
+.i .AddinfoBox ._n input{
+    color: #000;
+    background-color:white; 
+}
+.i .AddinfoBox ._n span{
+    color: #000;
+}
+
+.i .AddinfoBox ._j input{
+    color: #ccc;
+}
+.i .AddinfoBox ._j span{
+    color: #ccc;
+}
+.i .AddinfoBox >div:nth-of-type(2){
+    margin-top: 20px;
+}
+.i .AddinfoBox >div:nth-of-type(2) button{
+    float: right;
+    margin-right: 25px;
+}
+.i .AddinfoBox >div:nth-of-type(1) .inInput:nth-child(2) .ant-input-disabled{
+    background-color: white;
+    color: #000;
+}

@@ -1,0 +1,30 @@
+.j .AddinfoBox{
+    width: 380px;
+    left: calc(50% - 180px);
+}
+.jBtn{
+    text-align: right;
+}
+.j .Addinfo .AddinfoBox .jBtn button{
+    float: none;
+    display: inline-block;
+    margin: 0;
+    margin-left: 15px;
+}
+.j .userData>div{
+    margin-top: 15px;
+    height: 32px;
+    line-height: 32px;
+}
+.j .userData>div >span{
+    box-sizing: border-box;
+    padding-right: 8px;
+     float: left;
+     width: 20%;
+     text-align: right;
+}
+.j .userData>div >input,.j .userData>div .ant-calendar-picker{
+    float: left;
+    width: 80%;
+    padding: 0;
+}

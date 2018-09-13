@@ -1,5 +1,7 @@
-import React,{Component} from "react";
-import {Button }           from "antd";
+import React,{Component}                    from "react";
+import {Button,Input,DatePicker }           from "antd";
+import locale from 'antd/lib/date-picker/locale/zh_CN';
+
 
 export default class App extends Component {
     constructor(props){
@@ -8,7 +10,9 @@ export default class App extends Component {
             accounts:"",
             password:"",
             name:"",
-            phone:""
+            phone:"",
+            maintenanceDate:"",
+            repairPersonnel:"",
         }
     }
     componentDidMount(){
@@ -16,25 +20,43 @@ export default class App extends Component {
     }
    
     postData=( )=>{
-        let data={
-            accounts:this.state.accounts,
-            password:this.state.password,
-            name:this.state.name,
-            phone:this.state.phone,
-            aid:this.props.diff.aid,
+        let _data={
+            maintenanceDate:this.state.maintenanceDate,
+            mid:this.props.oid.mid,
+            repairPersonnel:this.state.repairPersonnel,
         }
-        this.props._diff( data,()=>{
-            this.props._onclick( )
-        } )
+        this.props.postData(_data)
     }
-    
+    DateChange=(a,b)=>{
+        this.setState({
+            maintenanceDate:b
+        })
+    }
+    repairPersonnel=(e)=>{
+            this.setState({
+                repairPersonnel:e.target.value,
+            })
+    }
     render(){
             return(
             <div className={"Addinfo"}>
                 <div className={"AddinfoBox"}>
-                    <h3>审核 <i className={"deladmin"}  onClick={this.props._onclick}></i></h3>
-                    <p>区域：广东省深圳市南山区&nbsp;&nbsp;管理员：段明明&nbsp;&nbsp;月份：2018-3&nbsp;&nbsp;销售额：998</p>
-                    <Button>月份：2018</Button>
+                    <h3>维修 <i className={"deladmin"}  onClick={this.props._onclick}></i></h3>
+                    <p>APP用户：{this.props.oid.userName}&nbsp;&nbsp;设备名称：{this.props.oid.deviceName}&nbsp;&nbsp;</p>
+                    <div className={"userData clear-fix"}>
+                        <div className={"clear-fix"}>
+                            <span>维修人员</span>
+                            <Input onChange={this.repairPersonnel}/>
+                        </div>
+                        <div className={"clear-fix"}>
+                            <span>维修日期</span>
+                            <DatePicker onChange={this.DateChange} locale={locale}/>
+                        </div>
+                    </div>
+                    <div className={"jBtn"}>
+                        <Button onClick={this.props._onclick}>取消</Button>
+                        <Button onClick={this.postData} type="primary">确定</Button>
+                    </div>
                 </div>
             </div>
             )

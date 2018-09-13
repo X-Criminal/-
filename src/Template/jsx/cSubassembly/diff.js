@@ -1,18 +1,22 @@
-import React,{Component} from "react";
-import {Input,Button}           from "antd" 
+import React,{Component}        from "react";
+import {Input,Button}           from "antd" ;
+//import axios                    from "axios";
 
 import Transition from "../public/transition.js"
 export default class App extends Component {
     constructor(props){
         super(props);
         this.state={
-         
+         sid:"",
+         data:{},
         }
     }
-
+    componentDidMount(){
+        console.log(this.props.diffData)
+       //门店详情没有接口
+    }
     
     render(){
-        if(this.props._diffBox){
             return(
                 <div className={"Addinfo"}>
                     <div className={"AddinfoBox"}>  
@@ -30,8 +34,5 @@ export default class App extends Component {
                     </div>
                 </div>
             )
-        }else{
-            return null;
-        }
     }
-} 
+}

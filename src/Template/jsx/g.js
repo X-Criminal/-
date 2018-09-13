@@ -1,5 +1,6 @@
 import React,{Component} from "react"
 import axios             from "axios"
+import cookie            from "react-cookies"
 
 import "echarts/lib/chart/bar"
 // 引入提示框和标题组件
@@ -7,7 +8,7 @@ import 'echarts/lib/component/tooltip';
 import 'echarts/lib/component/title';
 import "../css/g.css"
 
-import Secrch from "./gSubassembly/secrch.js";
+import Secrch  from "./gSubassembly/secrch.js";
 import Type1   from "./gSubassembly/type1.js";
 import Type2   from "./gSubassembly/type2.js";
 import Type3   from "./gSubassembly/type3.js";
@@ -48,7 +49,6 @@ export default class app extends Component{
          }
     }
     getSalesStatistics(data,cb){
-        console.log(data)
          axios.post(this.props.http+"/securitylock/web/admin/getSalesStatistics",data)
          .then((res)=>{
             cb&&cb()
@@ -59,7 +59,12 @@ export default class app extends Component{
         return(
             <div className={"a g"}>
                 <h3><span><i className={"iconfont icon-shuju"}> </i> 销售统计</span></h3>
-                <Secrch getSalesStatistics={this.SalesStatistics} http={this.props.http}/>
+                {
+                    cookie.load("adminInfo").data.type!=="4"?
+                        <Secrch getSalesStatistics={this.SalesStatistics} http={this.props.http}/>
+                        :
+                        null
+                }
                 <div className={"_stateBtn"}>
                     <button onClick={this._Is} name={"1"} className={this.state.Is[0]===1?"s":""}>周</button>
                     <button onClick={this._Is} name={"2"} className={this.state.Is[1]===1?"s":""}>月</button>

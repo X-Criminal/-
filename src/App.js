@@ -1,8 +1,13 @@
+
 import React, { Component } from 'react';
-import './App.css';
 import cookie from "react-cookies"
+
+import './App.css';
 import 'antd/dist/antd.css';
 import "./fontLcon/iconfont.css"
+import 'moment/locale/zh-cn';
+
+
 
 import Login from "./Template/login"
 import Body from "./Template/body"
